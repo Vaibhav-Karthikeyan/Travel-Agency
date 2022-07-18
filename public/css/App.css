@@ -1,0 +1,43 @@
+﻿/*styling.css*/
+/*add font family, background image*/
+
+body {
+  color: #5bc0de;
+  font-family: "Poppins", sans-serif;
+}
+
+.fa-map-marker-alt,
+.fa-dot-circle {
+  color: #5bc0de;
+}
+
+.maps {
+  background-color: transparent;
+  margin: 0;
+  padding: 10px;
+}
+
+.maps h1 {
+  letter-spacing: 2.5px;
+}
+
+.maps h1,
+.maps p {
+  text-align: center;
+}
+
+#googleMap {
+  width: 80%;
+  height: 400px;
+  margin: 10px auto;
+}
+
+#output {
+  text-align: center;
+  font-size: 2em;
+  margin: 20px auto;
+}
+
+#mode {
+  color: black;
+}

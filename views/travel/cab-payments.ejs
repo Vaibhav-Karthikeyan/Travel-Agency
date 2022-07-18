@@ -1,0 +1,39 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/item.css">
+    </head>
+    <body>
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+        <div class="grid">
+                <article class="card item-item">
+                    <header class="card__header">
+                        <h1 class="item__title">Your booking</h1>
+                    </header>
+                    <div class="card_content">
+                        <label>Name:</label>
+                        <p class="item__text"><%= user.name %><p> 
+                        <label for>start</label>
+                        <p class="item__text"><%= user.cabBookings.bookings[0].start %> <p> 
+                        <label for>End</label>
+                        <p class="item__text"><%= user.cabBookings.bookings[0].end %> <p> 
+                        <label>Total price</label>
+                        <p class="item__text"><%= user.cabBookings.bookings[0].price %> <p> 
+                    </div>
+                    <div class="centered">
+                    <form action="/cab-checkout" method="POST">
+                    <script
+                      src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                      data-key="pk_test_51JzpSZSC4iIFjK1xNsdVDtVgAcWLKuL6L0pHeND1OcU7PUyMQ4dQNciI4uqgKAdAHSweRSWAh7Et12Scm7JCroUZ00vCpm0wXx"
+                      data-amount="<%= user.cabBookings.bookings[0].price*100%>"
+                      data-name="Your Booking"
+                      data-description="Travel Booking"
+                      data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                      data-locale="auto"
+                      data-currency="inr">
+                    </script>
+                    </form>
+                    </div>
+                </article>
+        </div>
+    </main>
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,33 @@
+<div class="backdrop"></div>
+<header class="main-header">
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <li class="main-header__item">
+                    <a class="<%= path ==='/admin/' ? 'active' : '' %>" href="/admin/" title="Admin Home"><i class="fas fa-home"></i></a>
+            </li>
+            <li class="main-header__item">
+                <a class="<%= path ==='/admin/plane' ? 'active' : '' %>" href="/admin/plane">Planes</a>
+            </li>
+            <li class="main-header__item">
+                <a class="<%= path ==='/admin/train' ? 'active' : '' %>" href="/admin/train">Trains</a>
+            </li>
+            <li class="main-header__item">
+                <a class="<%= path ==='/admin/type' ? 'active' : '' %>" href="/admin/type">Car Types</a>
+            </li>
+            <li class="main-header__item">
+                <a class="<%= path ==='/admin/add-type' ? 'active' : '' %>" href="/admin/add-type">Add Car Types</a>
+            </li>
+            <li class="main-header__item">
+                <a class="<%= path ==='/admin/add-plane' ? 'active' : '' %>" href="/admin/add-plane">Add Planes</a>
+            </li>
+            <li class="main-header__item">
+                <a class="<%= path ==='/admin/add-train' ? 'active' : '' %>" href="/admin/add-train">Add Trains</a>
+            </li>
+        </ul>
+        <ul class="main-header__item-list">
+            <li class="main-header__item">
+                <a class="<%= path ==='/' ? 'active' : '' %>" href="/">User Mode</a>
+            </li>
+        </ul>
+    </nav>
+</header>

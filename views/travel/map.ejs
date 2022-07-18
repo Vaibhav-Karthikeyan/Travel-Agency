@@ -1,0 +1,61 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="/css/App.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <%- include('../includes/navigation.ejs') %>
+    <div class="maps">
+        <div class="container-fluid">
+            <h1>Cab Booking</h1>
+            <p>Select your Starting Location and Destination.</p>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="from" class="col-xs-2 control-label"><i class="far fa-dot-circle"></i></label>
+                    <div class="col-xs-4">
+                        <input type="text" id="from" placeholder="Origin" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="to" class="col-xs-2 control-label"><i class="fas fa-map-marker-alt"></i></label>
+                    <div class="col-xs-4">
+                        <input type="text" id="to" placeholder="Destination" class="form-control">
+                    </div>
+
+                </div>
+
+            </form>
+
+            <div class="col-xs-offset-2 col-xs-10">
+                <button class="btn btn-info btn-lg " onclick="calcRoute();"><i class="fas fa-map-signs"></i></button>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div id="googleMap">
+            </div>
+            <div id="output">
+            </div>
+        </div>
+
+    </div>
+    <main>
+        <form action="/cab-bookings" method="POST">
+            <input type="hidden" value="<%= cab.id %>" name="id">
+            <input type="hidden" value="<%= cab.price %>" name="price">
+            <input type="hidden" value="" name="start" id="start">
+            <input type="hidden" value="" name="end" id="end">
+            <input type="hidden" value="" name="distance" id="distance">
+            <div class="centered">
+                <button class="btn" type="submit">Make Booking</button>
+            </div>
+        </form>
+    </main>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnZmbvAsgXrfp4H2YBXmpfYQCuUiLgGAQ&libraries=places"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/js/Main.js"></script>
+<%- include('../includes/end.ejs') %>

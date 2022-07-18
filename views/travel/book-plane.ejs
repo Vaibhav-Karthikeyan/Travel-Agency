@@ -1,0 +1,37 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/item.css">
+
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <main>
+        <h1 class="centered">Reach your end destination by flying with us at best prices</h1>
+        <% if (plane.length>0){%>
+            <div class="grid">
+                <% for (let planes of plane) { %>
+                    <article class="card item-item">
+                        <header class="card__header">
+                            <h1 class="item__title"><%=planes.name%> </h1>
+                        </header>
+                        <div class="card_content">
+                            <label><b>Starting Location :</b></label>
+                            <p class="item__text"><%= planes.startingLocation%></p>
+                            <label><b>Ending Location :</b></label>
+                            <p class="item__text"><%= planes.endingLocation %> </p>
+                            <label><b>No of seats :</b></label>
+                            <p class="item__text"><%= planes.noOfSeats%> </p>
+                            <label><b>Price :</b></label>
+                            <p class="item__text"><%= planes.price %> </p>
+                        </div>
+                        <div class="card__actions">
+                            <a href="/plane-bookings/<%= planes.id %>" class="btn">Book Plane</a>                              
+                        </div>
+                    </article>
+                    <% } %>
+                </div>
+                <% } else { %>
+                    <h1 class="card item-item">No Planes Found!</h1>
+                    <% } %>
+        </main>
+<%- include('../includes/end.ejs') %>

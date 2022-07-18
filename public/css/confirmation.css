@@ -1,0 +1,52 @@
+
+.bg {
+  width: 480px;
+  overflow: hidden;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 40px;
+  font-family: 'Roboto';
+  margin-top: 40px;
+  
+}
+
+.card__msg {
+    
+    text-transform: uppercase;
+    color: #55585b;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    
+  }
+
+.credit-card {
+    
+    width: 50px;
+    display: inline-block;
+    margin-right: 15px;
+    
+  }
+  .card__card-details {
+    
+    display: inline-block;
+    text-align: left;
+    
+  }
+  .card__card-type {
+    
+    text-transform: uppercase;
+    color: #232528;
+    font-weight: 600;
+    font-size: 12px;
+    margin-bottom: 3px;
+    
+  }
+
+  .card__success {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-color: #60c878;
+    border: 5px solid white;
+  }

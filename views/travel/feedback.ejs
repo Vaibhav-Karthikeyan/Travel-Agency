@@ -1,0 +1,70 @@
+<%- include('../includes/head.ejs') %>
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <h1>
+        Travel Site Feedback
+    </h1>
+    <form action="/feedback" method="post">
+        <fieldset>
+            <legend>
+                Your Details:
+            </legend>
+            <div class="form-control">
+                Name: <input type="text" name="name" size="30" maxlength="100">
+            <div>
+            <br>
+            <div class="form-control">
+                Email: <input type="email" name="email" size="30" maxlength="100">
+            <div>
+            <br>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend> Your Review: </legend>
+            <p>
+                <div class="form-control" for="hear-about">
+                    How did you hear about us?
+                <div>
+                <select name="referrer" id="hear-about">
+                    <option value="media">Social Media</option>
+                    <option value="friend">Friend</option>
+                    <option value="other">Other</option>
+                </select>
+            </p>
+            </p>
+    
+            Would you visit again?
+            <br>
+            <div class="form-control">
+                <input type="radio" name="rating" value="yes" />
+                Yes
+            <div>
+            <div class="form-control">
+                <input type="radio" name="rating" value="no" />
+                No
+            <div>
+            <div class="form-control">
+                <input type="radio" name="rating" value="maybe" />
+                Maybe
+            <div>
+            </p>
+            <p>
+                <div class="form-control" for="comments">
+                    Comments:
+                <div>
+                <br>
+                <textarea rows="4" cols="40" id="comments">
+    </textarea>
+            </p>
+            <div class="form-control">
+                <input type="checkbox" name="subscribe" checked="checked" value="true">
+                Sign me up for email updates
+            <div>
+            <br>
+            <button class="btn" type="submit">Submit Feedback</button>
+        </fieldset>
+    </form>
+    </body>
+    
+    </html>
+<%- include('../includes/end.ejs') %>

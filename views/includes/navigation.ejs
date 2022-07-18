@@ -1,0 +1,37 @@
+<div class="backdrop"></div>
+<header class="main-header">
+    <nav class="main-header__nav">
+        <ul class="main-header__item-list">
+            <li class="main-header__item">
+            <a class="<%= path ==='/' ? 'active' : '' %>" href="/" title="Home"><i class="fas fa-home"></i></a>
+            </li>
+            <% if (isAuthenticated) { %>
+                <li class="main-header__item">
+                    <a class="<%= path ==='/book-cab' ? 'active' : '' %>" href="/book-cab"><i class="fas fa-car-side"></i>  Book Cab</a>
+                </li>
+                <li class="main-header__item">
+                    <a class="<%= path ==='/book-train' ? 'active' : '' %>" href="/book-train"><i class="fas fa-train"></i> Book Train</a>
+                </li>
+                <li class="main-header__item">
+                    <a class="<%= path ==='/book-plane' ? 'active' : '' %>" href="/book-plane"><i class="fas fa-plane"></i>  Book Plane</a>
+                </li>
+            <% } %>
+        </ul>
+        <ul class="main-header__item-list">
+            <% if (!isAuthenticated) { %>
+                <li class="main-header__item">
+                    <a class="<%= path ==='/login' ? 'active' : '' %>" href="/login">Login</a>
+                </li>
+            <% } else { %>
+                <li class="main-header__item">
+                    <form action="/logout" method="post">
+                        <button class="main-header__item" type="submit">Logout</button>
+                    </form>
+                </li>
+                <li class="main-header__item">
+                    <a class="<%= path ==='/admin/' ? 'active' : '' %>" href="/admin/">Admin</a>
+                </li>
+            <% } %>
+        </ul>
+    </nav>
+</header>

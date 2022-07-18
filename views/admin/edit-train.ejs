@@ -1,0 +1,37 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+
+<body>
+    <%- include('../includes/admin-navigation.ejs') %>
+
+    <main>
+        <form action="/admin/<% if (editing) { %>edit-train<% } else { %>add-train<% } %>" method="POST">
+            <div class="form-control">
+                <label for="name">Name of train</label>
+                <input type="text" name="name" id="name" value="<% if (editing) { %><%= train.name %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="seats">No of Seats</label>
+                <input type="text" name="seats" id="seats" value="<% if (editing) { %><%= train.noOfSeats %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="starting">Starting Location</label>
+                <input type="text" name="starting" id="starting" value="<% if (editing) { %><%= train.startingLocation %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="ending">Ending Location</label>
+                <input type="text" name="ending" id="ending" value="<% if (editing) { %><%= train.endingLocation %><% } %>">
+            </div>
+            <div class="form-control">
+                <label for="price">Price</label>
+                <input type="text" name="price" id="price" value="<% if (editing) { %><%= train.price %><% } %>">
+            </div>
+            <% if (editing) { %>
+                <input type="hidden" value="<%= train.id %>" name="id">
+            <% } %>
+            <button class="btn" type="submit"><% if (editing) { %>Update train<% } else { %>Add train<% } %></button>
+
+        </form>
+    </main>
+<%- include('../includes/end.ejs')%>

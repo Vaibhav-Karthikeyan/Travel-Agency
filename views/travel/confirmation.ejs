@@ -1,0 +1,29 @@
+<%- include('../includes/head.ejs') %>
+<link rel="stylesheet" href="/css/confirmation.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+<div class="bg">
+
+    <div class="card">
+        <div class="centered">
+        <span class="card__success"><i class="fas fa-check"></i></span>
+        </div>
+        <h1 class="card__msg">Payment Complete</h1>
+        <h2 class="card__submsg">Thank you for your booking</h2>
+            <p class="card__method">Payment method</p>
+            <div class="card__payment">
+                <img src="https://seeklogo.com/images/V/VISA-logo-F3440F512B-seeklogo.com.png"
+                    class="credit-card">
+                <div class="card__card-details">
+                    <p class="card__card-type">Credit / debit card</p>
+                </div>
+            </div>  
+            <div class="card__actions">
+                <a href="/feedback" class="btn">Drop a Review</a>
+                <a href="/" class="btn">Home</a>
+            </div>
+        </div>
+    </div>
+<%- include('../includes/end.ejs') %>
